@@ -1,4 +1,5 @@
 import random, time
+from pynput import keyboard
 
 
 class GoL:
@@ -69,12 +70,18 @@ class GoL:
                     self.cells[row][col] = self.dead
 
 
+# Implementing keyboard listener
+def on_press_end(key):
+    if key == keyboard.Key.enter:
+        print("Quitting program.")
+        return False
+
+
 # Introduction
 print("Welcome to Conway's Game of Life!\n")
 print(
     "The rules are simple:\n\t1. A living cell with less than 2 neighbors dies.\n\t2. A living cell with 2 or 3 living neighbors lives.\n\t3. A living cell with more than 3 neighbors dies.\n\t4. Lastly, A dead cell with exactly three living neighbors becomes alive.\n"
 )
-print("Once the game starts, if you would like to quit the game, press enter.")
 print("Now, I will ask you for four inputs.\n")
 
 no_size = False
@@ -114,10 +121,15 @@ else:
     gol = GoL(width, height, living, dead)
 
 count = 0
-while True:
-    print(f"Step {count}:")
-    print(gol, "\n\n")
-    gol.step()
-    count += 1
 
-    time.sleep(2)
+with keyboard.Listener(on_press=on_press_end) as listener:
+    print("\nTo quit the game, press enter.")
+    while True:
+        print(f"Step {count}:")
+        print(gol, "\n\n")
+        gol.step()
+        count += 1
+        time.sleep(2)
+
+        if not listener.running:
+            break
