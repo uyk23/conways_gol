@@ -14,15 +14,15 @@ h1 {
     color: #001524;
     background-color: #385D4875;
     text-align: center;
-    padding: 50px;
+    padding: 2%;
 }
 
-section {
+.main {
     display: flex;
 }
 
 article {
-    padding: 50px;
+    padding: 5%;
 }
 
 .cells {
@@ -33,7 +33,23 @@ article {
 .rules {
     text-align: left;
     flex: 0 1 auto;
-    max-width: 50%;
+    max-width: 30%;
     background-color: #FDE5D4;
     margin-left: 1%;
+    min-width: 50px;
+}
+
+.selectors div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+label,
+input {
+    margin: 2% auto;
+}
+
+.submit {
+    padding: 2%;
 }

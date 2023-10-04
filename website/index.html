@@ -3,7 +3,7 @@
 
 <head>
     <title>Game of Life</title>
-    <link href="./resources/css/style.css" type="text/css" rel="stylesheet">
+    <link href="./resources/styles/style.css" type="text/css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
         rel="stylesheet">
@@ -14,15 +14,16 @@
     <nav>
 
     </nav>
-    <section>
+    <section class="main">
         <article class="cells">
-            <table>
-            </table>
+            <div class="container">
+            </div>
         </article>
         <article class="rules">
             <p>The rules of the game are:</p>
             <ul>
-                <li>A living cell with less than 2 neighbors dies.</li>
+                <li id="first">A living cell with less than 2 neighbors dies.
+                </li>
                 <li>A living cell with 2 or 3 living neighbors lives.</li>
                 <li>A living cell with more than 3 neighbors dies.</li>
                 <li>A dead cell with exactly three living neighbors becomes
@@ -30,6 +31,32 @@
             </ul>
         </article>
     </section>
+    <section class="selectors">
+        <form>
+            <div>
+                <div>
+                    <label for="cellHeight">Height (default 5):</label>
+                    <input type="number" id="cellHeight" placeholder=" 5"
+                        min="1" max="50">
+                </div>
+                <div>
+                    <label for="cellWidth">Width (default 5):</label>
+                    <input type="number" id="cellWidth" placeholder=" 5" min="1"
+                        max="50">
+                </div>
+                <div>
+                    <label for="livingColor">Living cells color:</label>
+                    <input type="color" id="livingColor" value="#FFFFFF">
+                </div>
+                <div>
+                    <label for="deadColor">Dead cells color:</label>
+                    <input type="color" id="deadColor" value="#000000">
+                </div>
+            </div>
+            <button type="button" id="submit">BEGIN</button>
+        </form>
+    </section>
+    <script src="./resources/scripts/main.js"></script>
 </body>
 
 </html>
