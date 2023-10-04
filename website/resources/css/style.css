@@ -1,0 +1,39 @@
+* {
+    border-radius: 10px;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Bree Serif", serif;
+    background-color: #385D4850;
+    margin: auto;
+    width: 95%;
+}
+
+h1 {
+    color: #001524;
+    background-color: #385D4875;
+    text-align: center;
+    padding: 50px;
+}
+
+section {
+    display: flex;
+}
+
+article {
+    padding: 50px;
+}
+
+.cells {
+    background-color: #D6CC9950;
+    flex: 4 1 auto;
+}
+
+.rules {
+    text-align: left;
+    flex: 0 1 auto;
+    max-width: 50%;
+    background-color: #FDE5D4;
+    margin-left: 1%;
+}
