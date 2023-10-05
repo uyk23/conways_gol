@@ -49,10 +49,13 @@ function sleep(ms) {
 }
 
 async function playGame() {
-    let i = 1;
-    let seconds = 5;
+    let i = 2;
+    let seconds = 2.5;
 
+    counter.style.padding = "2%";
+    counter.innerHTML = 'Step: 1';
     await sleep(seconds * 1000);
+
     while (gol.playing) {
         counter.innerHTML = `Step: ${i}`;
         //printing
@@ -70,6 +73,7 @@ async function playGame() {
 function stopGame() {
     gol.playing = false;
     counter.innerHTML = "";
+    counter.style.padding = null;
 }
 
 function step() {

@@ -79,3 +79,9 @@ button {
 .grid-item {
     border: solid #385D4875;
 }
+
+#counter {
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFFFFF75;
+}
