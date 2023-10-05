@@ -27,6 +27,7 @@ h1 {
     display: flex;
     height: 75%;
     min-height: 400px;
+    margin-bottom: 2%;
 }
 
 article {
@@ -49,9 +50,9 @@ article {
 }
 
 div.inputs,
-div.buttons {
+div.buttons,
+div.time {
     display: flex;
-    margin: 1% auto;
     justify-content: center;
 }
 
@@ -68,7 +69,6 @@ button {
     padding: 10px;
     margin: 1% 10%;
     width: 75px;
-    display: inline-block;
 }
 
 #grid-container {

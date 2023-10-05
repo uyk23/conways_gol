@@ -1,10 +1,16 @@
 var gol;
 
 const heightInput = document.getElementById("cellHeight");
+heightInput.param = "size"
 heightInput.addEventListener("input", checkRange);
 
 const widthInput = document.getElementById("cellWidth");
 widthInput.addEventListener("input", checkRange);
+widthInput.param = "size"
+
+const timeInput = document.getElementById("seconds");
+timeInput.param = "time"
+timeInput.addEventListener("input", checkRange);
 
 const submit = document.getElementById("submit");
 submit.addEventListener("click", newGame);
@@ -16,10 +22,11 @@ const counter = document.getElementById('counter');
 
 class GoL {
     constructor() {
-        this.height = document.querySelector("#cellHeight").value || 23;
-        this.width = document.querySelector("#cellWidth").value || 23;
+        this.height = document.querySelector("#cellHeight").value;
+        this.width = document.querySelector("#cellWidth").value;
         this.living = document.querySelector("#livingColor").value;
         this.dead = document.querySelector("#deadColor").value;
+        this.seconds = document.querySelector("#seconds").value
         this.playing = false;
 
         this.cells = [];
@@ -50,22 +57,16 @@ function sleep(ms) {
 
 async function playGame() {
     let i = 2;
-    let seconds = 2.5;
 
     counter.style.padding = "2%";
     counter.innerHTML = 'Step: 1';
-    await sleep(seconds * 1000);
+    await sleep(gol.seconds * 1000);
 
     while (gol.playing) {
         counter.innerHTML = `Step: ${i}`;
-        //printing
-        console.log(`step ${i}`);
-        let str = JSON.stringify(gol.cells);
-        console.log(str);
-
         step();
         change();
-        await sleep(seconds * 1000);
+        await sleep(gol.seconds * 1000);
         i++;
     }
 }
@@ -153,12 +154,14 @@ function change() {
 }
 
 function checkRange(event) {
-    if (event.target.value < 1) {
-        alert("Min value is 1");
-        event.target.value = 1;
+    let lower = event.currentTarget.param === "size" ? 1 : 0.5;
+    let higher = event.currentTarget.param === "size" ? 50 : 60;
+    if (event.target.value < lower) {
+        alert(`Min value is ${lower}`);
+        event.target.value = lower;
     }
     if (event.target.value > 50) {
-        alert("Max value is 50");
-        event.target.value = 50;
+        alert(`Max value is ${higher}`);
+        event.target.value = higher;
     }
 }
