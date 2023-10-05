@@ -11,7 +11,8 @@ body {
     font-size: 16px;
     background-color: #385D4850;
     width: 95%;
-    height: 100%;
+    height: 90%;
+    margin: auto;
 }
 
 h1 {
@@ -24,19 +25,20 @@ h1 {
 .main {
     display: flex;
     height: 75%;
+    min-height: 400px;
 }
 
 article {
     padding: 3%;
 }
 
-.cells {
+#cells {
     background-color: #D6CC9950;
     flex: 4 1 auto;
     padding: 1%;
 }
 
-.rules {
+#rules {
     text-align: left;
     flex: 0 1 auto;
     max-width: 30%;
@@ -45,24 +47,35 @@ article {
     min-width: 20%;
 }
 
-.selectors div {
+div.inputs,
+div.buttons {
     display: flex;
+    margin: 1% auto;
+    justify-content: center;
+}
+
+div.inputs {
     flex-wrap: wrap;
-    margin: auto;
 }
 
 label,
 input {
-    margin: 5% 5px;
+    margin: 1% 5px;
 }
 
-#submit {
+button {
     padding: 10px;
-    margin: auto 50%;
+    margin: 1% 10%;
+    width: 75px;
+    display: inline-block;
 }
 
-#container {
+#grid-container {
     display: grid;
     height: 100%;
     grid-gap: 2px;
+}
+
+.grid-item {
+    border: solid #385D4875;
 }

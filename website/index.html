@@ -15,11 +15,11 @@
 
     </nav>
     <section class="main">
-        <article class="cells">
-            <div id="container">
+        <article id="cells">
+            <div id="grid-container">
             </div>
         </article>
-        <article class="rules">
+        <article id="rules">
             <p>The rules of the game are:</p>
             <ul>
                 <li id="first">A living cell with less than 2 neighbors dies.
@@ -29,31 +29,35 @@
                 <li>A dead cell with exactly three living neighbors becomes
                     alive.</li>
             </ul>
+            <p id="counter"></p>
         </article>
     </section>
     <section class="selectors">
         <form>
-            <div>
+            <div class="inputs">
                 <div>
-                    <label for="cellHeight">Height (default 5):</label>
-                    <input type="number" id="cellHeight" placeholder=" 5"
+                    <label for="cellHeight">Height (default 23):</label>
+                    <input type="number" id="cellHeight" placeholder="23"
                         min="1" max="50">
                 </div>
                 <div>
-                    <label for="cellWidth">Width (default 5):</label>
-                    <input type="number" id="cellWidth" placeholder=" 5" min="1"
+                    <label for="cellWidth">Width (default 23):</label>
+                    <input type="number" id="cellWidth" placeholder="23" min="1"
                         max="50">
                 </div>
                 <div>
                     <label for="livingColor">Living cells color:</label>
-                    <input type="color" id="livingColor" value="#FFFFFF">
+                    <input type="color" id="livingColor" value="#EFFFEE">
                 </div>
                 <div>
                     <label for="deadColor">Dead cells color:</label>
-                    <input type="color" id="deadColor" value="#000000">
+                    <input type="color" id="deadColor" value="#013220">
                 </div>
             </div>
-            <button type="button" id="submit">BEGIN</button>
+            <div class="buttons">
+                <button type="button" id="submit">BEGIN</button>
+                <button type="button" id="stop">STOP</button>
+            </div>
         </form>
     </section>
     <script src="./resources/scripts/main.js"></script>
