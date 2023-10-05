@@ -72,8 +72,7 @@ async function playGame() {
 
 function stopGame() {
     gol.playing = false;
-    counter.innerHTML = "";
-    counter.style.padding = null;
+    counter.innerHTML = "Game Stopped";
 }
 
 function step() {
